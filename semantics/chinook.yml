@@ -1,0 +1,45 @@
+tables:
+  - name: invoices
+    fields: InvoiceId, CustomerId, InvoiceDate, strftime('%Y', Date) as Year, strftime('%m', Date) as Month
+
+  - name: invoice_items
+    fields: InvoiceId, InvoiceItemId, UnitPrice, Quantity
+
+  - name: customers
+    fields: CustomerId, LastName, FirstName, Company Country, State, PostalCode, SupportRepId
+
+  - name: employees
+    fields: EmployeeId, LastName, FirstName, FirstName || ' ' || LastName as EmployeeName, ReportsTo as Manager, HireDate
+
+joins:
+  - table1: invoice_items
+    table2: invoices
+    key: InvoiceId
+
+  - table1: invoices
+    table2: customers
+    key: CustomerId
+
+  - table1: customers
+    table2: employees
+    key: SupportRepId = EmployeeId
+
+  - table1: employees
+    table2: employees
+    key: EmployeeId = ReportsTo
+
+metrics:
+  - name: Revenue
+    table: invoice_items
+    calculation: sum(UnitPrice)*sum(Quantity)
+    dimensions: Company, EmployeeName, InvoiceDate, Month, Year
+
+  - name: Number of Employees
+    table: employees
+    calculation: count(distinct(EmployeeId))
+    dimensions: Company
+
+  - name: Team Size
+    table: employees
+    calculation: count(distinct(EmployeeId))
+    dimensions: Manager
