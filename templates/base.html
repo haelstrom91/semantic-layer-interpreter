@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link
+    rel="shortcut icon"
+    href="{{ url_for('static', filename='qmark.png') }}"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+</head>
+<body>
+    <div id="sidebar">
+      <ul>
+        <a href="/">Home</a>
+        <a href="/semantics">Semantics</a>
+        <a href="/sources">Sources</a>
+      </ul>
+    </div>
+    <div id="content">
+        <!-- Content area -->
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

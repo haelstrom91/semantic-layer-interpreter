@@ -42,3 +42,10 @@ def table():
         query= query
         )
 
+@app.route('/semantics')
+def about():
+    return render_template('semantics.html')
+
+@app.route('/sources')
+def contact():
+    return render_template('sources.html')

@@ -13,6 +13,12 @@
   font-weight: bold;
   font-style: normal;
 }
+
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
 body,
 input {
   font-size: 16px;
@@ -22,8 +28,6 @@ input {
 }
 body {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   padding-top: 60px;
 }
 .icon {
@@ -60,6 +64,39 @@ input[type="submit"] {
   text-align: center;
   cursor: pointer;
 }
+
+
+#sidebar {
+  height: 100%;
+  width: 220px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #009ce9;
+  overflow-x: hidden;
+  padding-top: 30px;
+}
+
+#sidebar a {
+  padding: 24px 24px 12px 0px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #f1f1f1;
+  display: block;
+} 
+
+#sidebar a:hover {
+  color: #8e8ea0;
+}
+
+#content {
+  margin-left: 240px;
+  padding: 20px;
+  flex-direction: column;
+  align-items: center;
+} 
+
 
 .query {
   padding: 8px;

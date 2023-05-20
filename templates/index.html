@@ -1,17 +1,13 @@
-<!DOCTYPE html>
-<head>
-  <title>sli</title>
-  <link
-    rel="shortcut icon"
-    href="{{ url_for('static', filename='qmark.png') }}"
-  />
-  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
-</head>
+{% extends 'base.html' %}
 
+{% block title %}Home{% endblock %}
+
+{% block content %}
 <body>
   <img src="{{ url_for('static', filename='qmark.png') }}" class="icon" />
-  <h3>sli - semantic layer interpreter</h3>
-  <img src="{{ url_for('static', filename='chinook-erd.jpg') }}" class="erd" />
+  <h3>semantic layer interpreter</h3>
+  </div>
+  <!-- <img src="{{ url_for('static', filename='chinook-erd.jpg') }}" class="erd" /> -->
   <form action="/" method="post">
     <input type="text" name="question" placeholder="Enter a data question" required />
     <input type="submit" value="Get answer" />
@@ -27,3 +23,4 @@
   <!-- <div class="result">{{ result }}</div> -->
   {% endif %}
 </body>
+{% endblock %}
