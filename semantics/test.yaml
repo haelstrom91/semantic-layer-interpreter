@@ -1,0 +1,5 @@
+metric:
+  calculation: srtb
+  dimensions: srtb
+  name: srh
+  table: srtb

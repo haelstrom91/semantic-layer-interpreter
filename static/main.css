@@ -14,10 +14,10 @@
   font-style: normal;
 }
 
-@media screen and (max-height: 450px) {
+/* @media screen and (max-height: 450px) {
   .sidebar {padding-top: 15px;}
   .sidebar a {font-size: 18px;}
-}
+} */
 
 body,
 input {
@@ -29,6 +29,8 @@ input {
 body {
   display: flex;
   padding-top: 60px;
+  flex-direction: column;
+  /* align-items: center; */
 }
 .icon {
   width: 34px;
@@ -61,10 +63,17 @@ input[type="submit"] {
   background-color: #009ce9;
   border: none;
   border-radius: 4px;
-  text-align: center;
+  /* text-align: center; */
   cursor: pointer;
 }
 
+input[type="submit"]:hover {
+  background-color: #4682B4;
+}
+
+input[type="submit"]:focus {
+  background-color: #7393B3;
+}
 
 #sidebar {
   height: 100%;
@@ -87,12 +96,13 @@ input[type="submit"] {
 } 
 
 #sidebar a:hover {
-  color: #8e8ea0;
+  color: #D3D3D3;
 }
 
 #content {
   margin-left: 240px;
   padding: 20px;
+  display: flex;
   flex-direction: column;
   align-items: center;
 } 
@@ -122,3 +132,24 @@ input[type="submit"] {
   border-radius: 10px;
 }
 
+/* CSS for the accordion */
+/* .accordion-item {
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.accordion-header {
+  padding: 10px;
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+.accordion-content {
+  padding: 10px;
+  display: None;
+}
+
+/* Add CSS to toggle content visibility when the header is clicked */
+/* .accordion-item.show-content .accordion-content {
+  display: block; 
+/* } */

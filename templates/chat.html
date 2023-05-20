@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <body>
+    <!-- <img src="{{ url_for('static', filename='qmark.png') }}" class="icon" /> -->
+    <!-- <h3>semantic layer interpreter</h3> -->
+    <!-- </div> -->
+    <!-- <img src="{{ url_for('static', filename='chinook-erd.jpg') }}" class="erd" /> -->
+    <form action="/chat" method="post">
+      <input type="text" name="question" placeholder="Enter a data question" required />
+      <input type="submit" value="Get answer" />
+    </form>
+    <div class = "query">
+      {{ query }}
+    </div>
+    {% if table %}
+    <div class = "table">
+      <!-- {{ query }} -->
+      {{ table | safe }}
+    </div>
+    <!-- <div class="result">{{ result }}</div> -->
+    {% endif %}
+  </body>
+{% endblock %}

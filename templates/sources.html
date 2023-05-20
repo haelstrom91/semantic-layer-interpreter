@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
-{% block title %}Sources{% endblock %}
-
 {% block content %}
-  <!-- <body>
-    <form action="/" method="post">
-      <input type="text" name="question" placeholder="Enter a data question" required />
-      <input type="submit" value="Get answer" />
+  <body>
+    <form action="/sources" method="post">
+      <label for="name">Source Name:</label>
+      <input type="text" name="name" placeholder="e.g. Data Warehouse" required />
+      <!-- <label for="name">Server:</label>
+      <input type="text" name="table" placeholder="e.g. orders" required /> -->
     </form>
-  </body> -->
+  </body>
 {% endblock %}

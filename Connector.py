@@ -1,4 +1,5 @@
 import sqlite3
+import yaml
 
 class Connector:
     def __init__(self, source):
@@ -18,4 +19,8 @@ class Connector:
                 data = [{"question unclear": 0}]
         con.close()
         return data
-    
+
+def write_yaml(dict, filename):    
+    with open(filename,"w") as file:
+        yaml.dump(dict, file)
+        file.close()
